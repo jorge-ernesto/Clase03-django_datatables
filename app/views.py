@@ -4,12 +4,10 @@ from .models import Programmer
 
 # Create your views here.
 
-
 def index(request):
     return render(request, 'index.html')
 
-
-def list_programmers(_request):
+def list_programmers(request):
     programmers = list(Programmer.objects.values())
     data = {'programmers': programmers}
     return JsonResponse(data)
